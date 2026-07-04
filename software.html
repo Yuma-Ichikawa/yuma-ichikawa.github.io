@@ -95,12 +95,8 @@ Runner.auto_run(model_id="meta-llama/Llama-2-7b-hf")</code></pre>
           </div>
         </div>
 
-        <figure class="sw-art reveal">
-          <img src="assets/img/research-quantization.png" alt="A continuous wave discretizing into binary dots — the essence of quantization" loading="lazy" />
-          <figcaption>
-            <span class="ja">連続から離散へ — 量子化の本質</span>
-            <span class="en">From continuous to discrete — the essence of quantization</span>
-          </figcaption>
+        <figure class="sw-art sw-diagram reveal">
+          <img src="assets/img/diagram-onecomp.svg" alt="OneComp pipeline: FP16 LLM goes through AutoBit, quantization, and evaluation, producing a 1-bit model served by vLLM" loading="lazy" />
         </figure>
       </div>
     </div>
@@ -123,8 +119,7 @@ Runner.auto_run(model_id="meta-llama/Llama-2-7b-hf")</code></pre>
           <div class="sw-code">
             <pre><code>pip install "qqa[all]"
 
-qqa solve mis --nodes 10000   # CLI
-qqa gui                       # Streamlit dashboard</code></pre>
+qqa gui   # launch the Streamlit dashboard</code></pre>
           </div>
 
           <ul class="sw-features">
@@ -142,12 +137,8 @@ qqa gui                       # Streamlit dashboard</code></pre>
           </div>
         </div>
 
-        <figure class="sw-art reveal">
-          <img src="assets/img/hero-landscape.png" alt="Golden spheres settling into the valleys of an energy landscape — annealing toward optimal solutions" loading="lazy" />
-          <figcaption>
-            <span class="ja">エネルギーランドスケープの谷へ — アニーリングによる最適解探索</span>
-            <span class="en">Settling into the valleys of the energy landscape — annealing toward optima</span>
-          </figcaption>
+        <figure class="sw-art sw-diagram reveal">
+          <img src="assets/img/diagram-qqa4co.svg" alt="QQA4CO workflow: a discrete problem is relaxed into continuous space, annealed with gradient-based parallel sampling on GPU, and mapped back to discrete solutions" loading="lazy" />
         </figure>
       </div>
     </div>
@@ -185,12 +176,8 @@ pip install -e ".[dev]"</code></pre>
           </div>
         </div>
 
-        <figure class="sw-art reveal">
-          <img src="assets/img/software-hierarchy.png" alt="A hierarchical structure branching from one coarse node into many fine nodes" loading="lazy" />
-          <figcaption>
-            <span class="ja">ミクロとマクロをつなぐ — 統計力学の階層的な視点</span>
-            <span class="en">Connecting micro and macro — the hierarchical viewpoint of statistical mechanics</span>
-          </figcaption>
+        <figure class="sw-art sw-diagram reveal">
+          <img src="assets/img/diagram-statphysml.svg" alt="StatPhys-ML framework: teacher-student setting where theory solvers (replica method, online ODEs) and simulations are compared automatically" loading="lazy" />
         </figure>
       </div>
     </div>

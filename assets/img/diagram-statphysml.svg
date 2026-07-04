@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="Inter, 'Noto Sans JP', sans-serif">
+  <defs>
+    <marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a2238"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="400" fill="#fdfdfb"/>
+
+  <!-- Teacher -->
+  <rect x="40" y="48" width="160" height="70" rx="4" fill="#1e2c56"/>
+  <text x="120" y="78" text-anchor="middle" font-size="13.5" font-weight="600" fill="#fdfdfb">Teacher</text>
+  <text x="120" y="98" text-anchor="middle" font-size="10.5" fill="#c9d2ec">ground-truth model</text>
+
+  <line x1="200" y1="83" x2="272" y2="83" stroke="#1a2238" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <text x="236" y="70" text-anchor="middle" font-size="10.5" fill="#b8860b" font-weight="600">data (x, y)</text>
+
+  <!-- Data -->
+  <rect x="280" y="48" width="160" height="70" rx="4" fill="none" stroke="#1a2238" stroke-width="1.5"/>
+  <text x="360" y="78" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1a2238">Datasets</text>
+  <text x="360" y="98" text-anchor="middle" font-size="10.5" fill="#4a5168">22 generators</text>
+
+  <line x1="440" y1="83" x2="512" y2="83" stroke="#1a2238" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <text x="476" y="70" text-anchor="middle" font-size="10.5" fill="#b8860b" font-weight="600">train</text>
+
+  <!-- Student -->
+  <rect x="520" y="48" width="160" height="70" rx="4" fill="none" stroke="#1a2238" stroke-width="1.5"/>
+  <text x="600" y="78" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1a2238">Student</text>
+  <text x="600" y="98" text-anchor="middle" font-size="10.5" fill="#4a5168">19 models &#183; Transformer, SSM, ...</text>
+
+  <!-- Two analysis branches -->
+  <line x1="360" y1="118" x2="220" y2="176" stroke="#1a2238" stroke-width="1.3" marker-end="url(#arrow3)"/>
+  <line x1="600" y1="118" x2="500" y2="176" stroke="#1a2238" stroke-width="1.3" marker-end="url(#arrow3)"/>
+
+  <rect x="110" y="180" width="220" height="66" rx="4" fill="#f6f5f0" stroke="#b8860b" stroke-width="1.4"/>
+  <text x="220" y="207" text-anchor="middle" font-size="13" font-weight="600" fill="#1a2238">Theory solvers</text>
+  <text x="220" y="228" text-anchor="middle" font-size="10.5" fill="#4a5168">replica method &#183; online-learning ODE</text>
+
+  <rect x="390" y="180" width="220" height="66" rx="4" fill="#f6f5f0" stroke="#1a2238" stroke-width="1.4"/>
+  <text x="500" y="207" text-anchor="middle" font-size="13" font-weight="600" fill="#1a2238">Simulation</text>
+  <text x="500" y="228" text-anchor="middle" font-size="10.5" fill="#4a5168">SGD experiments &#183; unified interface</text>
+
+  <line x1="220" y1="246" x2="300" y2="292" stroke="#1a2238" stroke-width="1.3" marker-end="url(#arrow3)"/>
+  <line x1="500" y1="246" x2="420" y2="292" stroke="#1a2238" stroke-width="1.3" marker-end="url(#arrow3)"/>
+
+  <!-- Comparison plot -->
+  <rect x="270" y="296" width="180" height="84" rx="4" fill="none" stroke="#1a2238" stroke-width="1.5"/>
+  <text x="360" y="316" text-anchor="middle" font-size="11.5" font-weight="600" fill="#1a2238">Automatic comparison</text>
+  <!-- axes -->
+  <line x1="292" y1="368" x2="292" y2="326" stroke="#8b8fa0" stroke-width="1"/>
+  <line x1="292" y1="368" x2="430" y2="368" stroke="#8b8fa0" stroke-width="1"/>
+  <!-- theory curve (solid navy) -->
+  <path d="M 294 334 C 320 340, 350 356, 428 362" fill="none" stroke="#1e2c56" stroke-width="1.8"/>
+  <!-- simulation points (gold) -->
+  <circle cx="305" cy="337" r="2.6" fill="#b8860b"/>
+  <circle cx="330" cy="344" r="2.6" fill="#b8860b"/>
+  <circle cx="356" cy="352" r="2.6" fill="#b8860b"/>
+  <circle cx="384" cy="357" r="2.6" fill="#b8860b"/>
+  <circle cx="412" cy="360" r="2.6" fill="#b8860b"/>
+</svg>

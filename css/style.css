@@ -372,6 +372,7 @@ html[data-lang="en"] .ja { display: none !important; }
 .sw-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
 .sw-art { margin: 0; }
 .sw-art img { width: 100%; height: auto; }
+.sw-diagram img { border: 1px solid var(--hairline); background: var(--paper); }
 
 .back-home { padding-top: 2rem; }
 
