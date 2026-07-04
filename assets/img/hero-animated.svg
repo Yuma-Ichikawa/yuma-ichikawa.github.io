@@ -14,7 +14,7 @@
   <style>
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
     .ring { fill: none; stroke: #1e2c56; }
-    .breathe { transform-box: fill-box; transform-origin: center; animation: breathe 7s ease-in-out infinite; }
+    .breathe { -webkit-transform-box: fill-box; transform-box: fill-box; transform-origin: center; animation: breathe 7s ease-in-out infinite; }
     .breathe.b2 { animation-duration: 9s; animation-delay: -3s; }
     .breathe.b3 { animation-duration: 8s; animation-delay: -5s; }
     .breathe.b4 { animation-duration: 10s; animation-delay: -2s; }
