@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yuma Ichikawa, Ph.D. | Researcher</title>
+<meta name="description" content="Yuma Ichikawa (市川佑馬), Ph.D. — Senior Research Manager at Fujitsu Limited / Project Researcher at RIKEN AIP. Statistical Mechanics, Learning Theory, Combinatorial Optimization, LLM Compression." />
+<meta name="theme-color" content="#0b0f19" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Yuma Ichikawa, Ph.D." />
+<meta property="og:description" content="Senior Research Manager, Fujitsu Limited / Project Researcher, RIKEN AIP. Statistical Mechanics × Learning Theory × Combinatorial Optimization × LLM Compression." />
+<meta property="og:type" content="website" />
+
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ========== HEADER / NAV ========== -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav container">
+    <a href="#home" class="logo">Y.I<span class="dot">.</span></a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#research" class="nav-link">Research</a></li>
+      <li><a href="#publications" class="nav-link">Publications</a></li>
+      <li><a href="#talks" class="nav-link">Talks</a></li>
+      <li><a href="#awards" class="nav-link">Awards</a></li>
+      <li><a href="#press" class="nav-link">Press</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="grid-lines"></div>
+    </div>
+
+    <div class="container hero-inner">
+      <p class="hero-kicker reveal">Ph.D. / Researcher</p>
+      <h1 class="hero-title reveal">
+        <span class="hero-name">Yuma Ichikawa</span>
+        <span class="hero-name-jp">市川佑馬</span>
+      </h1>
+      <p class="hero-role reveal">
+        Senior Research Manager, <strong>Fujitsu Limited</strong> &middot;
+        Project Researcher, <strong>RIKEN AIP</strong>
+      </p>
+      <p class="hero-tagline reveal">
+        統計力学・学習理論の視点から、組合せ最適化と大規模言語モデル(LLM)の圧縮・新規アーキテクチャ設計を研究しています。
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="#publications" class="btn btn-primary">Publications を見る</a>
+        <a href="#contact" class="btn btn-ghost">連絡する</a>
+      </div>
+
+      <div class="hero-socials reveal">
+        <a href="https://twitter.com/yuma_1_or" target="_blank" rel="noopener" aria-label="X (Twitter)" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-7.3L4.1 22H1l8.2-9.3L1 2h7.3l5.1 6.7L18.9 2Zm-1.2 18h1.9L7.4 4H5.3l12.4 16Z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/ichikawayuma1111" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.68H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+        </a>
+        <a href="https://orcid.org/0009-0004-4216-7017" target="_blank" rel="noopener" aria-label="ORCID" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2ZM7.37 6.5a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26ZM8.28 18h-1.8V9.7h1.8V18Zm3.15 0H9.63V9.7h3.14c2.98 0 4.29 2.13 4.29 4.15 0 2.2-1.72 4.15-4.28 4.15Zm-.02-6.75h-1.28v5.24h1.24c1.87 0 2.9-1.34 2.9-2.62 0-1.42-.99-2.62-2.86-2.62Z"/></svg>
+        </a>
+        <a href="https://github.com/Yuma-Ichikawa" target="_blank" rel="noopener" aria-label="GitHub" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.91.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.6.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+        </a>
+        <a href="mailto:ichikawa.yuma@fujitsu.com" aria-label="Email" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="下にスクロール"><span></span></a>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section-kicker reveal">About</p>
+      <h2 class="section-title reveal">自己紹介</h2>
+
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <p>
+            東京大学にて博士号(Ph.D.)を取得後、富士通株式会社に入社。現在は Senior Research Manager として、
+            理化学研究所 革新知能統合研究センター(RIKEN AIP)では Project Researcher として研究活動を行っています。
+          </p>
+          <p>
+            専門は情報統計力学・学習理論を基盤とした、組合せ最適化と機械学習の理論解析、および大規模言語モデル(LLM)の
+            アーキテクチャ設計・圧縮技術(量子化・枝刈り)です。国際会議(NeurIPS, ICLR, ICML, AISTATS 等)や
+            物理学・応用数理系ジャーナルへの論文発表に加え、社内外での講演・技術発信も積極的に行っています。
+          </p>
+          <p class="about-callout">
+            <strong>Recruiting:</strong> 基盤モデルの圧縮(主に LLM 量子化)や、Transformer とは一味違う新規 LLM
+            アーキテクチャの開発を一緒に研究する仲間を募集しています。カジュアル面談・1on1 いつでも歓迎です。お気軽にご連絡ください。
+          </p>
+        </div>
+
+        <div class="about-card">
+          <ul class="fact-list">
+            <li><span class="fact-label">Affiliation</span><span class="fact-value">Fujitsu Limited (Senior Research Manager)<br />RIKEN AIP (Project Researcher)</span></li>
+            <li><span class="fact-label">Degree</span><span class="fact-value">Ph.D., The University of Tokyo</span></li>
+            <li><span class="fact-label">Website</span><span class="fact-value"><a href="https://ichikawa-laboratory.com/" target="_blank" rel="noopener">ichikawa-laboratory.com</a></span></li>
+            <li><span class="fact-label">ORCID</span><span class="fact-value"><a href="https://orcid.org/0009-0004-4216-7017" target="_blank" rel="noopener">0009-0004-4216-7017</a></span></li>
+            <li><span class="fact-label">Reviewer</span><span class="fact-value">NeurIPS, ICLR, ICML, AISTATS, etc.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESEARCH ========== -->
+  <section class="section section-alt" id="research">
+    <div class="container">
+      <p class="section-kicker reveal">Research</p>
+      <h2 class="section-title reveal">Research Topics</h2>
+
+      <div class="research-grid">
+        <div class="research-card reveal">
+          <div class="research-icon">01</div>
+          <h3>Statistical Mechanics</h3>
+          <p>Information Statistical Mechanics, Spin Glass, Phase Transition, Markov Chain Monte Carlo</p>
+        </div>
+        <div class="research-card reveal">
+          <div class="research-icon">02</div>
+          <h3>Learning Theory</h3>
+          <p>High-Dimensional Statistics, Learning Dynamics</p>
+        </div>
+        <div class="research-card reveal">
+          <div class="research-icon">03</div>
+          <h3>Combinatorial Optimization</h3>
+          <p>Learning for Optimization, Heuristics, Simulated Annealing</p>
+        </div>
+        <div class="research-card reveal">
+          <div class="research-icon">04</div>
+          <h3>Large Language Model (LLM)</h3>
+          <p>Architecture, Compression, Quantization, Pruning</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PUBLICATIONS ========== -->
+  <section class="section" id="publications">
+    <div class="container">
+      <p class="section-kicker reveal">Publications</p>
+      <h2 class="section-title reveal">論文・研究業績</h2>
+
+      <div class="year-filter reveal" id="pubFilter">
+        <button class="chip is-active" data-year="all">All</button>
+        <button class="chip" data-year="2026">2026</button>
+        <button class="chip" data-year="2025">2025</button>
+        <button class="chip" data-year="2024">2024</button>
+        <button class="chip" data-year="2023">2023</button>
+        <button class="chip" data-year="2022">2022</button>
+      </div>
+
+      <div class="pub-list" id="pubList">
+
+        <article class="pub-item reveal" data-year="2026">
+          <span class="pub-year">2026</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Tensor-Network Population Annealing</h3>
+            <p class="pub-authors">Takumi Oshima, <strong>Yuma Ichikawa</strong>, Koji Hukushima</p>
+            <p class="pub-venue">arXiv:2604.11155</p>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2604.11155" target="_blank" rel="noopener">Link</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2026">
+          <span class="pub-year">2026</span>
+          <div class="pub-body">
+            <h3 class="pub-title">OneComp: One-Line Revolution for Generative AI Model Compression</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong> et al.</p>
+            <p class="pub-venue">arXiv:2603.28845</p>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2603.28845" target="_blank" rel="noopener">Link</a><a href="#">Project Page</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2026">
+          <span class="pub-year">2026</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Sign Lock-In: Randomly Initialized Weight Signs Persist and Bottleneck Sub-Bit Model Compression</h3>
+            <p class="pub-authors">Akira Sakai, <strong>Yuma Ichikawa</strong></p>
+            <p class="pub-venue">arXiv:2602.17063</p>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2602.17063" target="_blank" rel="noopener">Link</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2026">
+          <span class="pub-year">2026</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Thermal Min-Max Games: Unifying Bounded Rationality and Typical-Case Equilibrium</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong></p>
+            <p class="pub-venue">arXiv:2602.14858</p>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2602.14858" target="_blank" rel="noopener">Link</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2025">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <h3 class="pub-title">More Than Bits: Multi-Envelope Double Binary Factorization for Extreme Quantization</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Yoshihiko Fujisawa, Yudai Fujimoto, Akira Sakai, Katsuki Fujisawa</p>
+            <p class="pub-venue">arXiv:2512.24545</p>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2512.24545" target="_blank" rel="noopener">Link</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2025">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <h3 class="pub-title">PHOTON: Hierarchical Autoregressive Modeling for Lightspeed and Memory-Efficient Language Generation</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Naoya Takagi, Takumi Nakagawa, Yuzi Kanazawa, Akira Sakai</p>
+            <p class="pub-venue">arXiv:2512.20687</p>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2512.20687" target="_blank" rel="noopener">Link</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2025">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <h3 class="pub-title">LPCD: Unified Framework from Layer-Wise to Submodule Quantization</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Yudai Fujimoto, Akira Sakai</p>
+            <p class="pub-venue">arXiv:2512.01546</p>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2512.01546" target="_blank" rel="noopener">Link</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2025">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <h3 class="pub-title">High-Dimensional Learning Dynamics of Quantized Models with Straight-Through Estimator</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Shuhei Kashiwamura, Ayaka Sakata</p>
+            <p class="pub-venue">arXiv:2510.10693</p>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2510.10693" target="_blank" rel="noopener">Link</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2025">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization</h3>
+            <p class="pub-authors">Yamato Arai, <strong>Yuma Ichikawa</strong></p>
+            <p class="pub-venue">arXiv:2504.09629 &middot; <span class="badge">NeurIPS 2025 Accepted</span></p>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2504.09629" target="_blank" rel="noopener">Link</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2024">
+          <span class="pub-year">2024</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Large Multimodal AI and Its Application to Disaster Field</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Ryosuke Yano</p>
+            <p class="pub-venue">Mathematical Sciences Practice Research Letter, LMSR 2024-4</p>
+            <div class="pub-links"><a href="#">Link</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2024">
+          <span class="pub-year">2024</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Ratio Divergence Learning Using Target Energy in Restricted Boltzmann Machines: Beyond Kullback&ndash;Leibler Divergence Learning</h3>
+            <p class="pub-authors">Yuichi Ishida, <strong>Yuma Ichikawa</strong>, Aki Dote, Toshiyuki Miyazawa, Koji Hukushima</p>
+            <p class="pub-venue">Phys. Rev. E 112, 045306</p>
+            <div class="pub-links"><a href="#">Link</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2024">
+          <span class="pub-year">2024</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Statistical Mechanics of Min-Max Problems</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Koji Hukushima</p>
+            <p class="pub-venue">Transactions on Machine Learning Research (TMLR), 2835-8856</p>
+            <div class="pub-links"><a href="#">Link</a><a href="#">解説記事</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2024">
+          <span class="pub-year">2024</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Optimization by Parallel Quasi-Quantum Annealing with Gradient-Based Sampling</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Yamato Arai</p>
+            <p class="pub-venue">The Thirteenth International Conference on Learning Representations (ICLR 2025)</p>
+            <div class="pub-links"><a href="#">Link</a><a href="https://github.com/Yuma-Ichikawa/QQA4CO" target="_blank" rel="noopener">Project Page</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2024">
+          <span class="pub-year">2024</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Training-Free Time-Series Anomaly Detection: Leveraging Image Foundation Models</h3>
+            <p class="pub-authors">Nobuo Namura, <strong>Yuma Ichikawa</strong></p>
+            <p class="pub-venue">arXiv:2408.14756</p>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2408.14756" target="_blank" rel="noopener">Link</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2024">
+          <span class="pub-year">2024</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Continuous Parallel Relaxation for Finding Diverse Solutions in Combinatorial Optimization Problems</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Hiroaki Iwashita</p>
+            <p class="pub-venue">Transactions on Machine Learning Research (TMLR), 2853-8856</p>
+            <div class="pub-links"><a href="#">Link</a><a href="https://github.com/Yuma-Ichikawa/CRA4CO" target="_blank" rel="noopener">Project Page</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2023">
+          <span class="pub-year">2023</span>
+          <div class="pub-body">
+            <h3 class="pub-title">High-dimensional Asymptotics of VAEs: Threshold of Posterior Collapse and Dataset-size Dependence of Rate-Distortion Curve</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Koji Hukushima</p>
+            <p class="pub-venue">Journal of Statistical Mechanics: Theory and Experiment, IOP Publishing, 7, 073402 (2025)</p>
+            <div class="pub-links"><a href="#">Link</a><a href="#">Project Page</a><a href="#">解説記事</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2023">
+          <span class="pub-year">2023</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Adaptive Flip Graph Algorithm for Matrix Multiplication</h3>
+            <p class="pub-authors">Yamato Arai, <strong>Yuma Ichikawa</strong>, Koji Hukushima</p>
+            <p class="pub-venue">International Symposium on Symbolic and Algebraic Computation (ISSAC 2024)</p>
+            <div class="pub-links"><a href="#">Link</a><a href="#">Project Page</a><a href="#">解説記事</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2023">
+          <span class="pub-year">2023</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Controlling Continuous Relaxation for Combinatorial Optimization</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong></p>
+            <p class="pub-venue">Thirty-eighth Conference on Neural Information Processing Systems (NeurIPS 2024)</p>
+            <div class="pub-links"><a href="#">Link</a><a href="https://github.com/Yuma-Ichikawa/CPRA4CO" target="_blank" rel="noopener">Project Page</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2023">
+          <span class="pub-year">2023</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Learning Dynamics in Linear VAE: Posterior Collapse Threshold, Superfluous Latent Space Pitfalls, and Speedup with KL Annealing</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Koji Hukushima</p>
+            <p class="pub-venue">The 27th International Conference on Artificial Intelligence and Statistics (AISTATS 2024)</p>
+            <div class="pub-links"><a href="#">Link</a><a href="#">解説記事</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2022">
+          <span class="pub-year">2022</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Statistical-mechanical Study of Deep Boltzmann Machine Given Weight Parameters after Training by Singular Value Decomposition</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Koji Hukushima</p>
+            <p class="pub-venue">Journal of the Physical Society of Japan, 91, 114001 (2022)</p>
+            <div class="pub-links"><a href="#">Link</a><a href="#">解説記事</a></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal" data-year="2022">
+          <span class="pub-year">2022</span>
+          <div class="pub-body">
+            <h3 class="pub-title">Toward Unlimited Self-Learning MCMC with Parallel Adaptive Annealing</h3>
+            <p class="pub-authors"><strong>Yuma Ichikawa</strong>, Akira Nakagawa, Hiromoto Masayuki, Yuhei Umeda</p>
+            <p class="pub-venue">arXiv:2211.14024</p>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2211.14024" target="_blank" rel="noopener">Link</a></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <p class="section-kicker reveal">Open Source</p>
+      <h2 class="section-title reveal">Featured Projects</h2>
+
+      <div class="project-grid">
+        <a class="project-card reveal" href="https://github.com/Yuma-Ichikawa/QQA4CO" target="_blank" rel="noopener">
+          <h3>QQA4CO</h3>
+          <p>Quasi-Quantum Annealing (QQA): GPU solver for combinatorial &amp; spin-glass optimization — PyTorch library + Streamlit dashboard. (ICLR 2025)</p>
+          <span class="project-link">GitHub &rarr;</span>
+        </a>
+        <a class="project-card reveal" href="https://github.com/Yuma-Ichikawa/CRA4CO" target="_blank" rel="noopener">
+          <h3>CRA4CO</h3>
+          <p>Controlling Continuous Relaxation for Combinatorial Optimization — PyTorch implementation.</p>
+          <span class="project-link">GitHub &rarr;</span>
+        </a>
+        <a class="project-card reveal" href="https://github.com/Yuma-Ichikawa/CPRA4CO" target="_blank" rel="noopener">
+          <h3>CPRA4CO</h3>
+          <p>Continuous Parallel Relaxation for finding diverse solutions in combinatorial optimization problems.</p>
+          <span class="project-link">GitHub &rarr;</span>
+        </a>
+        <a class="project-card reveal" href="https://github.com/Yuma-Ichikawa/min-max-game-replica" target="_blank" rel="noopener">
+          <h3>min-max-game-replica</h3>
+          <p>Thermal Min-Max Games: Unifying Bounded Rationality and Typical-Case Equilibrium.</p>
+          <span class="project-link">GitHub &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TALKS ========== -->
+  <section class="section" id="talks">
+    <div class="container">
+      <p class="section-kicker reveal">Talks</p>
+      <h2 class="section-title reveal">Invited Talks</h2>
+
+      <div class="timeline">
+        <div class="timeline-year reveal">2026</div>
+        <ul class="timeline-list reveal">
+          <li><span class="t-date">2026/05/15</span> LSIとシステムのワークショップ2026 &mdash; 「超効率化への挑戦: LLM 1bit量子化のロードマップ」</li>
+          <li><span class="t-date">2026/04/24</span> A vLLM Deep Dive: Distributed Inference, KV Cache Evolution, and Model Compression &mdash; Model Compression with OneComp <em>(OSS: OneComp)</em></li>
+          <li><span class="t-date">2026/03</span> AI・データ利活研究会 第104回, JSIAM (日本応用数理学会) &mdash; 「超効率化への挑戦: 大規模モデルの量子化のワークフローと研究状況」</li>
+          <li><span class="t-date">2026/01</span> LF AI &amp; Data Japan Regional User Group &mdash; 「1bit LLM量子化のオープンソース化について」</li>
+          <li><span class="t-date">2026/01</span> 東京大学大学院情報理工学研究科 コンピュータ科学専攻 第四回産学交流会 &mdash; 「超効率化への挑戦: LLM 1bit量子化のロードマップ」</li>
+        </ul>
+
+        <div class="timeline-year reveal">2025</div>
+        <ul class="timeline-list reveal">
+          <li><span class="t-date">2025/12/18</span> エマージングテクノロジー小委員会 第18回討議 &mdash; 「超効率化への挑戦: LLM 1bit量子化」</li>
+          <li><span class="t-date">2025/11/11</span> 実環境インタラクション講演 &mdash; 「エッジで動く基盤モデル: 極低ビット量子化ワークフロー」</li>
+          <li><span class="t-date">2025/10/24</span> 京大情報学研究科先端技術講演会, 京都大学吉田キャンパス &mdash; 「生成AI量子化技術／富士通の先端AI技術研究」</li>
+          <li><span class="t-date">2025/10/22</span> NLPコロキウム &mdash; 「超効率化への挑戦: LLM 1bit量子化のロードマップ」</li>
+          <li><span class="t-date">2025/07</span> Jij Inc &mdash; 「数理最適化技術紹介(NeurIPS, ICLRの内容)」</li>
+        </ul>
+
+        <div class="timeline-year reveal">2024</div>
+        <ul class="timeline-list reveal">
+          <li><span class="t-date">2024/04</span> 情報統計力学とその周辺, 東京大学 駒場Iキャンパス &mdash; 「変分オートエンコーダの統計力学的解析」</li>
+          <li><span class="t-date">2024/02</span> 富山数理ワークショップ2024, 富山大学 五福キャンパス &mdash; 「強化学習を応用した最適化ソルバーの限界と教師なし学習による大規模最適化ソルバーの開発」</li>
+        </ul>
+
+        <div class="timeline-year reveal">2023</div>
+        <ul class="timeline-list reveal">
+          <li><span class="t-date">2023/09</span> 融合の場2023 深層学習がもたらすブレイクスルーと可能性(創発的研究支援事業), 早稲田大学西早稲田キャンパス &mdash; 「機械学習を応用した組み合わせ最適化ソルバーの限界と可能性」</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AWARDS ========== -->
+  <section class="section section-alt" id="awards">
+    <div class="container">
+      <p class="section-kicker reveal">Awards</p>
+      <h2 class="section-title reveal">受賞歴</h2>
+
+      <ul class="award-list">
+        <li class="award-item reveal">
+          <span class="award-date">2026/03</span>
+          <div><h3>COCN 10 Emerging Technologies 2026</h3><p>1ビット AI推論, 1-bit Quantized AI for Inference</p></div>
+        </li>
+        <li class="award-item reveal">
+          <span class="award-date">2025/12</span>
+          <div><h3>井上研究奨励賞</h3><p>表現学習の統計力学: 機械学習における低次元表現の獲得と利点</p></div>
+        </li>
+        <li class="award-item reveal">
+          <span class="award-date">2025/03</span>
+          <div><h3>東京大学一高記念賞</h3><p>表現学習の統計力学: 機械学習における低次元表現の獲得と利点</p></div>
+        </li>
+        <li class="award-item reveal">
+          <span class="award-date">2024/04</span>
+          <div><h3>日本物理学会学生優秀発表賞</h3><p>レプリカ法による変分オートエンコーダの学習ダイナミクスにおける最適解への到達可能性</p></div>
+        </li>
+        <li class="award-item reveal">
+          <span class="award-date">2021/03</span>
+          <div><h3>東京大学大学院総合文化研究科広域科学専攻奨励賞</h3><p>学習を反映した重みパラメータを持つ深層ボルツマンマシンの統計力学的解析</p></div>
+        </li>
+        <li class="award-item reveal">
+          <span class="award-date">2020/03</span>
+          <div><h3>Best Presentation Award for Graduation Research</h3><p>van Hove理論を用いたスピングラス緩和過程の解析</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== PRESS ========== -->
+  <section class="section" id="press">
+    <div class="container">
+      <p class="section-kicker reveal">Media</p>
+      <h2 class="section-title reveal">Press Releases &amp; News</h2>
+
+      <ul class="press-list">
+        <li class="press-item reveal"><span class="p-date">2026/01/09</span>「富士通がLLMの量子化ソフトを公開へ、1ビット化しても性能を9割保持」<span class="p-source">日経XTECH</span></li>
+        <li class="press-item reveal"><span class="p-date">2025/11/28</span>「『手挙げ制度』で1万3000人が大異動 新卒5年目の部長級誕生 人事改革、業態変化促す」<span class="p-source">日経ビジネス</span></li>
+        <li class="press-item reveal"><span class="p-date">2025/11/20</span>「【対談】AI分野の国際学会NeurIPS2025に採択！若手研究者が語る、次世代AI研究」<span class="p-source">富士通 広報note</span></li>
+        <li class="press-item reveal"><span class="p-date">2025/09/25</span>「『働きながら博士進学』に道 富士通や島津製作所、新領域のコア人材に」<span class="p-source">日経新聞</span></li>
+        <li class="press-item reveal"><span class="p-date">2025/09/25</span>「飛躍なるか民間博士3『働きながら進学』に道」<span class="p-source">日経新聞</span></li>
+        <li class="press-item reveal">
+          <span class="p-date">2025/09/08</span>「AIの軽量化・省電力を実現する生成AI再構成技術を開発し、富士通の大規模言語モデル『Takane』を強化」<span class="p-source">富士通株式会社</span>
+          <ul class="press-sub">
+            <li>富士通、生成AIの省電力化技術を開発 GPU使用枚数は4分の1へ &mdash; 日本経済新聞, 2025/09/19</li>
+            <li>“1ビット量子化”で精度を約9割維持 富士通が独自のLLM軽量化・省電力技術 &mdash; ASCII, 2025/09/10</li>
+            <li>富士通、LLMの軽量化技術を発表 1ビット量子化でも約9割の精度を維持 3倍に高速化も &mdash; ITmedia AI, 2025/09/08</li>
+            <li>富士通、1ビット量子化によるAIの軽量化・省電力化 &mdash; Ledge.ai, 2025/09/12</li>
+            <li>富士通、LLMの軽量化・省電力を実現するAI軽量化技術を開発 &mdash; クラウドWatch, 2025/09/09</li>
+          </ul>
+        </li>
+        <li class="press-item reveal"><span class="p-date">2025/02</span>「【一日密着】博士人材の新たな未来！富士通研究員の一日」<span class="p-source">卓越社会人制度</span></li>
+        <li class="press-item reveal"><span class="p-date">2025/01</span>「NeurIPS2024に参加・発表しました #1 ～GPUを用いた次世代組み合わせ最適化ソルバー～」<span class="p-source">Fujitsu Tech Blog</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <p class="section-kicker reveal">Get in touch</p>
+      <h2 class="section-title reveal">Contact</h2>
+      <p class="contact-lead reveal">
+        共同研究・講演依頼・キャリア相談など、お気軽にご連絡ください。研究員募集についても随時受け付けています。
+      </p>
+
+      <div class="contact-grid reveal">
+        <a class="contact-card" href="mailto:ichikawa.yuma@fujitsu.com">
+          <span class="contact-label">Fujitsu Limited</span>
+          <span class="contact-value">ichikawa.yuma@fujitsu.com</span>
+        </a>
+        <a class="contact-card" href="mailto:yuma.ichikawa@a.riken.jp">
+          <span class="contact-label">RIKEN AIP</span>
+          <span class="contact-value">yuma.ichikawa@a.riken.jp</span>
+        </a>
+      </div>
+
+      <div class="hero-socials reveal contact-socials">
+        <a href="https://twitter.com/yuma_1_or" target="_blank" rel="noopener" aria-label="X (Twitter)" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-7.3L4.1 22H1l8.2-9.3L1 2h7.3l5.1 6.7L18.9 2Zm-1.2 18h1.9L7.4 4H5.3l12.4 16Z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/ichikawayuma1111" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.68H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+        </a>
+        <a href="https://orcid.org/0009-0004-4216-7017" target="_blank" rel="noopener" aria-label="ORCID" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2ZM7.37 6.5a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26ZM8.28 18h-1.8V9.7h1.8V18Zm3.15 0H9.63V9.7h3.14c2.98 0 4.29 2.13 4.29 4.15 0 2.2-1.72 4.15-4.28 4.15Zm-.02-6.75h-1.28v5.24h1.24c1.87 0 2.9-1.34 2.9-2.62 0-1.42-.99-2.62-2.86-2.62Z"/></svg>
+        </a>
+        <a href="https://github.com/Yuma-Ichikawa" target="_blank" rel="noopener" aria-label="GitHub" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.91.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.6.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Yuma Ichikawa. All rights reserved.</p>
+    <button id="backToTop" class="back-to-top" aria-label="トップへ戻る">&uarr;</button>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
