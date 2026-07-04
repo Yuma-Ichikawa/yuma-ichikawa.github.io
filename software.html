@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Software — Yuma Ichikawa</title>
+<meta name="description" content="Open-source software by Yuma Ichikawa: OneComp (LLM compression), QQA4CO (GPU combinatorial optimization), StatPhys-ML (statistical mechanics of machine learning)." />
+<meta name="theme-color" content="#fdfdfb" />
+
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav container-wide">
+    <a href="index.html" class="wordmark">Yuma&nbsp;Ichikawa</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about" class="nav-link">About</a></li>
+      <li><a href="index.html#research" class="nav-link">Research</a></li>
+      <li><a href="index.html#publications" class="nav-link">Publications</a></li>
+      <li><a href="software.html" class="nav-link is-current">Software</a></li>
+      <li><a href="index.html#talks" class="nav-link">Talks</a></li>
+      <li><a href="index.html#awards" class="nav-link">Awards</a></li>
+      <li><a href="index.html#press" class="nav-link">Press</a></li>
+      <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button class="lang-btn" id="langJa" data-set-lang="ja">日本語</button>
+      <span class="lang-sep">/</span>
+      <button class="lang-btn" id="langEn" data-set-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-kicker reveal"><span class="ja">オープンソースソフトウェア</span><span class="en">Open-Source Software</span></p>
+      <h1 class="page-title reveal">Software</h1>
+      <p class="page-lead reveal">
+        <span class="ja">理論研究の成果を, 実際に動くツールとして公開しています。LLMの極限圧縮, GPU組合せ最適化, 学習理論のシミュレーション — すべて pip install から始められます。</span>
+        <span class="en">Theory shipped as working tools: extreme LLM compression, GPU combinatorial optimization, and learning-theory simulation — all one pip install away.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== ONECOMP ========== -->
+  <section class="section software-detail" id="onecomp">
+    <div class="container">
+      <div class="sw-grid">
+        <div class="sw-info reveal">
+          <span class="software-tag">LLM Compression</span>
+          <h2 class="sw-name">OneComp</h2>
+          <p class="sw-sub">Fujitsu One Compression</p>
+
+          <p class="sw-desc">
+            <span class="ja">大規模言語モデルのポストトレーニング量子化を自動化するOSSライブラリ (MITライセンス). GPTQ, DBF, RTNといった標準手法に加え, NeurIPS 2025採択のQEP (Quantization Error Propagation) やLPCDなどの研究成果を統合. GPUのVRAMを自動検出し, ILPベースで層ごとの最適ビット幅を割り当てるAutoBitにより, 量子化・評価・保存までを完全自動で実行する.</span>
+            <span class="en">An open-source library (MIT) for automated post-training quantization of LLMs. Alongside standard methods (GPTQ, DBF, RTN), it integrates research results such as QEP — Quantization Error Propagation (NeurIPS 2025) — and LPCD. AutoBit detects available GPU VRAM and assigns per-layer bit-widths via ILP, running quantization, evaluation, and saving fully automatically.</span>
+          </p>
+
+          <div class="sw-code">
+            <pre><code>pip install onecomp
+
+from onecomp import Runner
+Runner.auto_run(model_id="meta-llama/Llama-2-7b-hf")</code></pre>
+          </div>
+
+          <ul class="sw-features">
+            <li><span class="ja">QEP: 量子化誤差を後続層へ伝播補正 (NeurIPS 2025)</span><span class="en">QEP: propagates and compensates quantization error across layers (NeurIPS 2025)</span></li>
+            <li><span class="ja">AutoBit: VRAM自動推定 + ILPによる混合精度ビット割当</span><span class="en">AutoBit: automatic VRAM estimation + ILP-based mixed-precision assignment</span></li>
+            <li><span class="ja">1bit / 1.58bit級の極限量子化 (DBF, OneBit) に対応</span><span class="en">Extreme low-bit quantization down to 1-bit / 1.58-bit (DBF, OneBit)</span></li>
+            <li><span class="ja">vLLMプラグインで量子化モデルをそのままサービング可能</span><span class="en">Serve quantized models directly with vLLM via built-in plugins</span></li>
+            <li><span class="ja">Llama / Qwen3 / Gemma など主要アーキテクチャで検証済み</span><span class="en">Verified on major architectures: Llama, Qwen3, Gemma, and more</span></li>
+          </ul>
+
+          <div class="sw-links">
+            <a class="btn btn-solid" href="https://github.com/FujitsuResearch/OneCompression" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-line" href="https://fujitsuresearch.github.io/OneCompression/" target="_blank" rel="noopener">Documentation</a>
+            <a class="btn btn-line" href="https://arxiv.org/abs/2603.28845" target="_blank" rel="noopener">Paper (arXiv)</a>
+          </div>
+        </div>
+
+        <figure class="sw-art reveal">
+          <img src="assets/img/research-quantization.png" alt="A continuous wave discretizing into binary dots — the essence of quantization" loading="lazy" />
+          <figcaption>
+            <span class="ja">連続から離散へ — 量子化の本質</span>
+            <span class="en">From continuous to discrete — the essence of quantization</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== QQA4CO ========== -->
+  <section class="section section-tinted software-detail" id="qqa4co">
+    <div class="container">
+      <div class="sw-grid sw-grid-flip">
+        <div class="sw-info reveal">
+          <span class="software-tag">Combinatorial Optimization</span>
+          <h2 class="sw-name">QQA4CO</h2>
+          <p class="sw-sub">Parallel Quasi-Quantum Annealing</p>
+
+          <p class="sw-desc">
+            <span class="ja">組合せ最適化・スピングラス最適化のための研究グレードPyTorchツールキット. 離散問題を連続空間へ持ち上げ, GPU上の勾配ベース並列サンプリングで離散解へアニールする. ICLR 2025採択のPQQAに加え, CRA-PI-GNN (NeurIPS 2024), CPRA (TMLR 2025) を単一のAPIに統合. MIS, Max-Cut, TSP, スピングラスなど20以上の問題クラスと, SA・ポピュレーションアニーリングのGPU並列ベースラインを同梱する.</span>
+            <span class="en">A research-grade PyTorch toolkit for combinatorial and spin-glass optimization. It lifts discrete problems into continuous space and anneals toward discrete minima with gradient-based parallel sampling on GPU. Unifies PQQA (ICLR 2025), CRA-PI-GNN (NeurIPS 2024), and CPRA (TMLR 2025) behind one API, with a 20+ class problem catalogue and GPU-parallel SA / population-annealing baselines.</span>
+          </p>
+
+          <div class="sw-code">
+            <pre><code>pip install "qqa[all]"
+
+qqa solve mis --nodes 10000   # CLI
+qqa gui                       # Streamlit dashboard</code></pre>
+          </div>
+
+          <ul class="sw-features">
+            <li><span class="ja">PQQAソルバー: 勾配ベース並列サンプリングによる準量子アニーリング (ICLR 2025)</span><span class="en">PQQA solver: quasi-quantum annealing with gradient-based parallel sampling (ICLR 2025)</span></li>
+            <li><span class="ja">20+の問題クラス: QUBO, ナップサック, TSP, スピングラス, パーセプトロンなど</span><span class="en">20+ problem classes: QUBO graphs, knapsack, TSP, spin glasses, perceptrons, and more</span></li>
+            <li><span class="ja">Streamlitダッシュボードで緩和変数の離散化をライブ可視化</span><span class="en">Live Streamlit dashboard visualizing relaxed variables as they discretize</span></li>
+            <li><span class="ja">ブラウザで試せるホスト版デモを公開中</span><span class="en">A hosted, zero-install web demo is available</span></li>
+          </ul>
+
+          <div class="sw-links">
+            <a class="btn btn-solid" href="https://github.com/Yuma-Ichikawa/QQA4CO" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-line" href="https://yuma-ichikawa.github.io/QQA4CO/" target="_blank" rel="noopener">Documentation</a>
+            <a class="btn btn-line" href="https://parallelquasiquantum4co.streamlit.app/" target="_blank" rel="noopener">Live Demo</a>
+            <a class="btn btn-line" href="https://openreview.net/forum?id=9EfBeXaXf0" target="_blank" rel="noopener">Paper (ICLR 2025)</a>
+          </div>
+        </div>
+
+        <figure class="sw-art reveal">
+          <img src="assets/img/hero-landscape.png" alt="Golden spheres settling into the valleys of an energy landscape — annealing toward optimal solutions" loading="lazy" />
+          <figcaption>
+            <span class="ja">エネルギーランドスケープの谷へ — アニーリングによる最適解探索</span>
+            <span class="en">Settling into the valleys of the energy landscape — annealing toward optima</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATPHYS-ML ========== -->
+  <section class="section software-detail" id="statphysml">
+    <div class="container">
+      <div class="sw-grid">
+        <div class="sw-info reveal">
+          <span class="software-tag">Learning Theory</span>
+          <h2 class="sw-name">StatPhys-ML</h2>
+          <p class="sw-sub">Statistical Mechanics Simulation Playground for Machine Learning</p>
+
+          <p class="sw-desc">
+            <span class="ja">機械学習モデルの理論解析(レプリカ法・オンライン学習ODE)と数値実験を統一インターフェースで扱うPythonパッケージ. Teacher-Student設定を軸に, 22種類のデータセット生成器と19種類の学習モデル(線形回帰, コミッティマシン, 2層NN, Transformer, SSMなど)を備え, 理論予測とシミュレーションの自動比較・出版品質の可視化までを一貫して行える.</span>
+            <span class="en">A Python package unifying theoretical analysis (replica method, online-learning ODEs) and numerical experiments for machine learning under a single interface. Built around the teacher-student setting, it ships 22 dataset generators and 19 learning models (linear, committee machines, two-layer networks, Transformers, SSMs, ...), with automatic theory-vs-simulation comparison and publication-quality visualization.</span>
+          </p>
+
+          <div class="sw-code">
+            <pre><code>git clone https://github.com/Yuma-Ichikawa/StatPhysMLSimPlayground.git
+cd StatPhysMLSimPlayground
+pip install -e ".[dev]"</code></pre>
+          </div>
+
+          <ul class="sw-features">
+            <li><span class="ja">レプリカ法・オンライン学習ODEによる理論ソルバーを搭載</span><span class="en">Theory solvers based on the replica method and online-learning ODEs</span></li>
+            <li><span class="ja">22のデータセット生成器と19の学習モデル (Transformer, SSM, Hopfieldを含む)</span><span class="en">22 dataset generators and 19 learning models (incl. Transformers, SSMs, Hopfield)</span></li>
+            <li><span class="ja">MSE, LASSO, Huber, Hinge, Logisticなど多様な損失関数に対応</span><span class="en">Diverse loss functions: MSE, LASSO, Huber, Hinge, Logistic, and more</span></li>
+            <li><span class="ja">理論とシミュレーションの自動比較フレームワーク</span><span class="en">A unified framework with automatic theory-simulation comparison</span></li>
+          </ul>
+
+          <div class="sw-links">
+            <a class="btn btn-solid" href="https://github.com/Yuma-Ichikawa/StatPhysMLSimPlayground" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <figure class="sw-art reveal">
+          <img src="assets/img/software-hierarchy.png" alt="A hierarchical structure branching from one coarse node into many fine nodes" loading="lazy" />
+          <figcaption>
+            <span class="ja">ミクロとマクロをつなぐ — 統計力学の階層的な視点</span>
+            <span class="en">Connecting micro and macro — the hierarchical viewpoint of statistical mechanics</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BACK ========== -->
+  <section class="section back-home">
+    <div class="container reveal" style="text-align:center;">
+      <a href="index.html" class="btn btn-line"><span class="ja">&larr; トップへ戻る</span><span class="en">&larr; Back to home</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Yuma Ichikawa</p>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">&uarr;</button>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,65 +1,46 @@
 # yuma-ichikawa.github.io
 
-Yuma Ichikawa (市川佑馬) の研究者向けプロフェッショナルサイトです。純粋な HTML / CSS / JavaScript のみで構築されており、ビルドツールや依存パッケージは一切不要です。
+Yuma Ichikawa (市川佑馬) のプロフェッショナルサイトです。純粋な HTML / CSS / JavaScript のみで構築されており、ビルドツールや依存パッケージは不要です。
 
-サイト内容(About / Research Topics / Publications / Talks / Awards / Press / Contact)は [ichikawa-laboratory.com](https://ichikawa-laboratory.com/) の情報をベースに再構成しています。
+公開URL: https://yuma-ichikawa.github.io
 
-## 公開手順(GitHub Pages)
+## 特徴
 
-1. GitHub 上でユーザー名と**完全に同じ名前**のリポジトリを作成します。
+- **白ベースのエディトリアルデザイン**(セリフ体見出し + ネイビー/ゴールドのアクセント)
+- **日本語 / 英語の切替**(ヘッダー右上のトグル、選択は localStorage に保存)
+- **Software 紹介ページ**(`software.html`): OneComp / QQA4CO / StatPhys-ML
+- **Publications の年別フィルタ**と各論文の紹介文(日英)
+- AI 生成のオリジナルアートワーク(エネルギーランドスケープ、相転移、量子化など研究テーマを表現)
 
-   - リポジトリ名: `yuma-ichikawa.github.io`
-   - Public を選択(READMEなどの初期化は不要。既にこのフォルダにファイルがあるため)
+## ディレクトリ構成
 
-2. このフォルダをそのリポジトリに紐づけて push します。
-
-   ```bash
-   cd yuma-ichikawa.github.io
-   git init
-   git add .
-   git commit -m "Initial commit: professional profile site"
-   git branch -M main
-   git remote add origin https://github.com/Yuma-Ichikawa/yuma-ichikawa.github.io.git
-   git push -u origin main
-   ```
-
-3. 数分待つと `https://yuma-ichikawa.github.io` でサイトが公開されます。
-   (ユーザーサイト用リポジトリは GitHub Pages が自動的に有効になります。もし表示されない場合は、リポジトリの
-   **Settings → Pages** で Source が `Deploy from a branch` / `main` / `/(root)` になっているか確認してください。)
+```
+yuma-ichikawa.github.io/
+├── index.html        # トップページ(About / Research / Publications / Software / Talks / Awards / Press / Contact)
+├── software.html     # ソフトウェア詳細ページ(OneComp / QQA4CO / StatPhys-ML)
+├── css/
+│   └── style.css     # 白ベースのエディトリアルデザイン、レスポンシブ対応
+├── js/
+│   └── main.js       # 言語切替・ナビ・スクロールアニメ・論文年フィルタ
+├── assets/
+│   └── img/          # 生成アートワーク(hero-landscape.png ほか)
+└── README.md
+```
 
 ## ローカルでのプレビュー
 
-ブラウザで `index.html` を直接開くだけで確認できます。ライブリロードしたい場合は VS Code の
-"Live Server" 拡張機能や、以下のように簡易サーバーを立てても構いません。
+ブラウザで `index.html` を直接開くだけで確認できます。簡易サーバーを使う場合:
 
 ```bash
 python -m http.server 8000
 # → http://localhost:8000 をブラウザで開く
 ```
 
-## ディレクトリ構成
+## 更新方法
 
-```
-yuma-ichikawa.github.io/
-├── index.html        # ページ本体(全セクション)
-├── css/
-│   └── style.css     # デザイン(ダーク/ライトテーマ対応、レスポンシブ)
-├── js/
-│   └── main.js        # テーマ切替・ナビ・スクロールアニメ・論文年フィルタ
-├── assets/
-│   └── img/            # プロフィール写真などを置く場所
-└── README.md
-```
+- **論文の追加**: `index.html` の `#publications` セクションに `<article class="pub-item" data-year="YYYY">` を追記。日本語紹介文は `<span class="ja">`, 英語は `<span class="en">` に書く
+- **講演・受賞・プレスの追加**: 対応するセクション(`#talks`, `#awards`, `#press`)に `<li>` を追記
+- **配色の変更**: `css/style.css` 冒頭の `:root { ... }` のカラー変数(`--ink`, `--gold` など)を変更
+- **独自ドメイン**: リポジトリ直下に `CNAME` ファイルを作成しドメイン名を1行記載
 
-## カスタマイズのポイント
-
-- **プロフィール写真を追加する場合**: `assets/img/` に画像を置き、`index.html` の
-  `.hero-inner` 内に `<img>` タグを追加してください。
-- **配色を変える場合**: `css/style.css` の先頭にある `:root { ... }` 内のカラー変数
-  (`--accent`, `--accent-2` など)を変更するだけで全体の配色が変わります。
-- **独自ドメインを使う場合**: このフォルダ直下に `CNAME` というファイルを作成し、
-  中身に独自ドメイン(例: `ichikawa-laboratory.com`)を1行だけ記載し、
-  ドメインの DNS 設定で GitHub Pages を指すようにしてください。
-- **論文・講演・受賞歴の更新**: `index.html` 内の該当セクション(`#publications`,
-  `#talks`, `#awards`, `#press`)に新しい `<article>` / `<li>` を追記するだけで反映されます。
-  Publications セクションの各カードには `data-year` 属性があり、年フィルタのボタンと連動しています。
+push すれば GitHub Pages に自動反映されます(通常1〜3分)。

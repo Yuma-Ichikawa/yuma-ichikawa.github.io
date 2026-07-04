@@ -1,28 +1,27 @@
 (() => {
   "use strict";
 
-  /* ---------- Theme toggle (persisted) ---------- */
+  /* ---------- Language toggle (persisted) ---------- */
   const root = document.documentElement;
-  const themeToggle = document.getElementById("themeToggle");
-  const THEME_KEY = "yi-theme";
+  const LANG_KEY = "yi-lang";
+  const langButtons = document.querySelectorAll("[data-set-lang]");
 
-  const applyTheme = (theme) => {
-    if (theme === "light") {
-      root.setAttribute("data-theme", "light");
-    } else {
-      root.removeAttribute("data-theme");
-    }
+  const applyLang = (lang) => {
+    root.setAttribute("data-lang", lang);
+    root.setAttribute("lang", lang);
+    langButtons.forEach((btn) => {
+      btn.classList.toggle("is-active", btn.dataset.setLang === lang);
+    });
   };
 
-  const savedTheme = localStorage.getItem(THEME_KEY);
-  const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-  applyTheme(savedTheme || (prefersLight ? "light" : "dark"));
+  applyLang(localStorage.getItem(LANG_KEY) || "ja");
 
-  themeToggle?.addEventListener("click", () => {
-    const isLight = root.getAttribute("data-theme") === "light";
-    const next = isLight ? "dark" : "light";
-    applyTheme(next);
-    localStorage.setItem(THEME_KEY, next);
+  langButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const lang = btn.dataset.setLang;
+      applyLang(lang);
+      localStorage.setItem(LANG_KEY, lang);
+    });
   });
 
   /* ---------- Mobile nav ---------- */
@@ -43,16 +42,14 @@
     });
   });
 
-  /* ---------- Header scroll state + scroll progress ---------- */
+  /* ---------- Header scroll state + progress ---------- */
   const header = document.getElementById("siteHeader");
   const progressBar = document.getElementById("progressBar");
 
   const onScroll = () => {
     header?.classList.toggle("is-scrolled", window.scrollY > 8);
-
-    const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
     if (progressBar) progressBar.style.width = `${pct}%`;
   };
   document.addEventListener("scroll", onScroll, { passive: true });
@@ -63,7 +60,7 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  /* ---------- Scroll reveal animations ---------- */
+  /* ---------- Scroll reveal ---------- */
   const revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
@@ -75,7 +72,7 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -30px 0px" }
     );
     revealEls.forEach((el) => observer.observe(el));
   } else {
@@ -91,10 +88,8 @@
       filterButtons.forEach((b) => b.classList.remove("is-active"));
       btn.classList.add("is-active");
       const year = btn.dataset.year;
-
       pubItems.forEach((item) => {
-        const match = year === "all" || item.dataset.year === year;
-        item.classList.toggle("is-hidden", !match);
+        item.classList.toggle("is-hidden", !(year === "all" || item.dataset.year === year));
       });
     });
   });
