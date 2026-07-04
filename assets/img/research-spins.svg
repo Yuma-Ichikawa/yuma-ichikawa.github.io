@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280">
+  <defs>
+    <g id="ar" stroke="#1e2c56" stroke-width="2.4" stroke-linecap="round" fill="none">
+      <line x1="0" y1="11" x2="0" y2="-9"/>
+      <path d="M -5.5 -3 L 0 -11 L 5.5 -3"/>
+    </g>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b8860b" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#b8860b" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#b8860b" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    .sp { transform-box: fill-box; transform-origin: center; animation: rot linear infinite; }
+    @keyframes rot { to { transform: rotate(360deg); } }
+    .rv { animation-direction: reverse; }
+    .t6 { animation-duration: 6s; } .t7 { animation-duration: 7.5s; }
+    .t9 { animation-duration: 9s; } .t11 { animation-duration: 11s; }
+    .o0 { animation-delay: 0s; } .o1 { animation-delay: -1.7s; }
+    .o2 { animation-delay: -3.1s; } .o3 { animation-delay: -4.6s; }
+
+    .sw { transform-box: fill-box; transform-origin: center; animation: sway 5s ease-in-out infinite; }
+    .sw.w2 { animation-duration: 6.5s; animation-delay: -2s; }
+    .sw.w3 { animation-duration: 5.8s; animation-delay: -3.5s; }
+    @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+
+    .shimmer { animation: shimmer 5s ease-in-out infinite; }
+    @keyframes shimmer { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+  </style>
+
+  <!-- disordered phase (left): rotating spins -->
+  <g transform="translate(75,60)"><g class="sp t7 o0"><use href="#ar"/></g></g>
+  <g transform="translate(150,60)"><g class="sp t9 o2 rv"><use href="#ar"/></g></g>
+  <g transform="translate(225,60)"><g class="sp t6 o1"><use href="#ar"/></g></g>
+  <g transform="translate(300,60)"><g class="sp t11 o3 rv"><use href="#ar"/></g></g>
+  <g transform="translate(375,60)"><g class="sp t7 o2"><use href="#ar"/></g></g>
+  <g transform="translate(450,60)"><g class="sp t9 o0 rv"><use href="#ar"/></g></g>
+
+  <g transform="translate(75,140)"><g class="sp t9 o1 rv"><use href="#ar"/></g></g>
+  <g transform="translate(150,140)"><g class="sp t6 o3"><use href="#ar"/></g></g>
+  <g transform="translate(225,140)"><g class="sp t11 o0 rv"><use href="#ar"/></g></g>
+  <g transform="translate(300,140)"><g class="sp t7 o1"><use href="#ar"/></g></g>
+  <g transform="translate(375,140)"><g class="sp t6 o2 rv"><use href="#ar"/></g></g>
+  <g transform="translate(450,140)"><g class="sp t11 o1"><use href="#ar"/></g></g>
+
+  <g transform="translate(75,220)"><g class="sp t6 o2"><use href="#ar"/></g></g>
+  <g transform="translate(150,220)"><g class="sp t11 o1 rv"><use href="#ar"/></g></g>
+  <g transform="translate(225,220)"><g class="sp t7 o3"><use href="#ar"/></g></g>
+  <g transform="translate(300,220)"><g class="sp t9 o2 rv"><use href="#ar"/></g></g>
+  <g transform="translate(375,220)"><g class="sp t11 o0"><use href="#ar"/></g></g>
+  <g transform="translate(450,220)"><g class="sp t6 o3 rv"><use href="#ar"/></g></g>
+
+  <!-- critical boundary (center): gold band -->
+  <rect class="shimmer" x="530" y="20" width="140" height="240" fill="url(#band)"/>
+  <g fill="#b8860b">
+    <circle class="shimmer" cx="600" cy="70" r="3.5"/>
+    <circle class="shimmer" cx="585" cy="140" r="4" style="animation-delay:-1.6s"/>
+    <circle class="shimmer" cx="612" cy="210" r="3.5" style="animation-delay:-3.2s"/>
+  </g>
+
+  <!-- ordered phase (right): aligned spins, gentle sway -->
+  <g transform="translate(750,60)"><g class="sw"><use href="#ar"/></g></g>
+  <g transform="translate(825,60)"><g class="sw w2"><use href="#ar"/></g></g>
+  <g transform="translate(900,60)"><g class="sw w3"><use href="#ar"/></g></g>
+  <g transform="translate(975,60)"><g class="sw"><use href="#ar"/></g></g>
+  <g transform="translate(1050,60)"><g class="sw w2"><use href="#ar"/></g></g>
+  <g transform="translate(1125,60)"><g class="sw w3"><use href="#ar"/></g></g>
+
+  <g transform="translate(750,140)"><g class="sw w3"><use href="#ar"/></g></g>
+  <g transform="translate(825,140)"><g class="sw"><use href="#ar"/></g></g>
+  <g transform="translate(900,140)"><g class="sw w2"><use href="#ar"/></g></g>
+  <g transform="translate(975,140)"><g class="sw w3"><use href="#ar"/></g></g>
+  <g transform="translate(1050,140)"><g class="sw"><use href="#ar"/></g></g>
+  <g transform="translate(1125,140)"><g class="sw w2"><use href="#ar"/></g></g>
+
+  <g transform="translate(750,220)"><g class="sw w2"><use href="#ar"/></g></g>
+  <g transform="translate(825,220)"><g class="sw w3"><use href="#ar"/></g></g>
+  <g transform="translate(900,220)"><g class="sw"><use href="#ar"/></g></g>
+  <g transform="translate(975,220)"><g class="sw w2"><use href="#ar"/></g></g>
+  <g transform="translate(1050,220)"><g class="sw w3"><use href="#ar"/></g></g>
+  <g transform="translate(1125,220)"><g class="sw"><use href="#ar"/></g></g>
+</svg>

@@ -42,10 +42,16 @@
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
 
-    <div class="lang-switch" role="group" aria-label="Language">
-      <button class="lang-btn" id="langJa" data-set-lang="ja">日本語</button>
-      <span class="lang-sep">/</span>
-      <button class="lang-btn" id="langEn" data-set-lang="en">EN</button>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn" id="langJa" data-set-lang="ja">日本語</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" id="langEn" data-set-lang="en">EN</button>
+      </div>
+      <a class="btn-mail" href="mailto:ichikawa.yuma@fujitsu.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6.5 12 13l9-6.5"/></svg>
+        <span class="btn-mail-label"><span class="ja">メール</span><span class="en">Email</span></span>
+      </a>
     </div>
   </nav>
 </header>
@@ -64,15 +70,27 @@
           Project Researcher, <a href="https://aip.riken.jp/" target="_blank" rel="noopener">RIKEN AIP</a>
         </p>
 
+        <div class="hero-affil reveal" aria-label="Affiliations">
+          <a href="https://www.fujitsu.com/" target="_blank" rel="noopener"><img class="hero-affil-fujitsu" src="assets/img/logo-fujitsu.svg" alt="Fujitsu" /></a>
+          <a href="https://aip.riken.jp/" target="_blank" rel="noopener" class="hero-affil-riken"><img src="assets/img/logo-riken.svg" alt="RIKEN" /><span>RIKEN AIP</span></a>
+        </div>
+
         <p class="hero-tagline reveal">
           <span class="ja">情報統計力学と学習理論を礎に, 組合せ最適化から大規模言語モデルの極限圧縮・新規アーキテクチャまで, 理論と実装の両輪で探究しています。</span>
           <span class="en">Grounded in statistical mechanics and learning theory, I explore everything from combinatorial optimization to extreme LLM compression and novel architectures — in both theory and practice.</span>
         </p>
 
         <div class="hero-actions reveal">
-          <a href="#publications" class="btn btn-solid"><span class="ja">研究業績</span><span class="en">Publications</span></a>
-          <a href="software.html" class="btn btn-line">Software</a>
+          <a href="mailto:ichikawa.yuma@fujitsu.com" class="btn btn-gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6.5 12 13l9-6.5"/></svg>
+            <span class="ja">講演・共同研究の依頼</span><span class="en">Speaking &amp; Collaboration</span>
+          </a>
+          <a href="#publications" class="btn btn-line"><span class="ja">研究業績</span><span class="en">Publications</span></a>
         </div>
+
+        <p class="hero-mail reveal">
+          <a href="mailto:ichikawa.yuma@fujitsu.com">ichikawa.yuma@fujitsu.com</a>
+        </p>
 
         <div class="hero-socials reveal">
           <a href="https://github.com/Yuma-Ichikawa" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
@@ -84,7 +102,7 @@
       </div>
 
       <figure class="hero-art reveal">
-        <img src="assets/img/hero-landscape.png" alt="Energy landscape flowing into a neural network" />
+        <img src="assets/img/hero-animated.svg" alt="Animated energy landscape flowing into a neural network" />
       </figure>
     </div>
   </section>
@@ -117,8 +135,8 @@
 
         <aside class="about-facts reveal">
           <dl>
-            <div><dt>Affiliation</dt><dd>Fujitsu Limited<br /><span class="muted">Research Director</span></dd></div>
-            <div><dt></dt><dd>RIKEN AIP<br /><span class="muted">Project Researcher</span></dd></div>
+            <div><dt>Affiliation</dt><dd><img class="aff-logo aff-logo-fujitsu" src="assets/img/logo-fujitsu.svg" alt="Fujitsu" />Fujitsu Limited<br /><span class="muted">Research Director</span></dd></div>
+            <div><dt></dt><dd><img class="aff-logo aff-logo-riken" src="assets/img/logo-riken.svg" alt="RIKEN" />RIKEN AIP<br /><span class="muted">Project Researcher</span></dd></div>
             <div><dt>Degree</dt><dd>Ph.D., The University of Tokyo</dd></div>
             <div><dt>Reviewer</dt><dd>NeurIPS, ICLR, ICML, AISTATS, etc.</dd></div>
             <div><dt>ORCID</dt><dd><a href="https://orcid.org/0009-0004-4216-7017" target="_blank" rel="noopener">0009-0004-4216-7017</a></dd></div>
@@ -134,13 +152,6 @@
       <div class="section-head reveal">
         <span class="section-no">02</span>
         <h2 class="section-title">Research</h2>
-      </div>
-
-      <div class="research-lead reveal">
-        <p>
-          <span class="ja">「乱れた系の物理」を共通言語に, 学習・推論・最適化という一見異なる問題を貫く普遍構造を探しています。理論で見つけた構造を, 実際に動くソルバーやライブラリとして社会に還す — それが研究のスタイルです。</span>
-          <span class="en">With the physics of disordered systems as a common language, I search for universal structures that run through learning, inference, and optimization — and return what theory reveals to society as working solvers and libraries.</span>
-        </p>
       </div>
 
       <div class="research-grid">
@@ -179,7 +190,7 @@
       </div>
 
       <figure class="research-banner reveal">
-        <img src="assets/img/research-statphys.png" alt="Spins transitioning from disorder to order across a critical point" loading="lazy" />
+        <img src="assets/img/research-spins.svg" alt="Animated spins transitioning from disorder to order across a critical point" loading="lazy" />
       </figure>
     </div>
   </section>
@@ -504,13 +515,6 @@
       <div class="section-head reveal">
         <span class="section-no">04</span>
         <h2 class="section-title">Software</h2>
-      </div>
-
-      <div class="software-lead reveal">
-        <p>
-          <span class="ja">研究成果は論文で終わらせず, 誰もが使えるオープンソースソフトウェアとして公開しています。</span>
-          <span class="en">Research doesn't end with papers — it ships as open-source software anyone can use.</span>
-        </p>
       </div>
 
       <div class="software-grid">

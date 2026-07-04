@@ -5,6 +5,18 @@
     </marker>
   </defs>
 
+  <style>
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    .walker { animation: walk 3.2s ease-in-out infinite; }
+    .w2 { animation-delay: -1.1s; }
+    .w3 { animation-delay: -2.2s; }
+    @keyframes walk { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    .dashflow { animation: dashflow 20s linear infinite; }
+    @keyframes dashflow { to { stroke-dashoffset: -160; } }
+    .sol { animation: solpulse 4.8s ease-in-out infinite; }
+    @keyframes solpulse { 0%, 100% { fill-opacity: 0.75; } 50% { fill-opacity: 1; } }
+  </style>
+
   <rect width="720" height="400" fill="#fdfdfb"/>
 
   <!-- Stage 1: discrete problem -->
@@ -30,9 +42,9 @@
   <path d="M 258 220 C 280 150, 305 150, 325 200 C 340 238, 356 238, 372 190 C 386 150, 404 148, 420 196 C 436 240, 452 242, 466 210"
         fill="none" stroke="#1e2c56" stroke-width="1.8"/>
   <!-- parallel walkers -->
-  <circle cx="300" cy="172" r="7" fill="#b8860b"/>
-  <circle cx="352" cy="226" r="7" fill="#b8860b"/>
-  <circle cx="430" cy="216" r="7" fill="#b8860b"/>
+  <circle class="walker" cx="300" cy="172" r="7" fill="#b8860b"/>
+  <circle class="walker w2" cx="352" cy="226" r="7" fill="#b8860b"/>
+  <circle class="walker w3" cx="430" cy="216" r="7" fill="#b8860b"/>
   <path d="M 306 180 q 8 14 14 24" fill="none" stroke="#b8860b" stroke-width="1.3" marker-end="url(#arrow2)"/>
   <path d="M 424 224 q -6 8 -12 12" fill="none" stroke="#b8860b" stroke-width="1.3" marker-end="url(#arrow2)"/>
   <text x="360" y="279" text-anchor="middle" font-size="10.5" fill="#4a5168">PQQA (ICLR 2025) &#183; CRA-PI-GNN &#183; CPRA</text>
@@ -43,7 +55,7 @@
   <!-- Stage 3: solution -->
   <text x="612" y="76" text-anchor="middle" font-size="13" font-weight="600" fill="#1a2238">Discrete solution</text>
   <text x="612" y="96" text-anchor="middle" font-size="11" fill="#4a5168">best / diverse solutions</text>
-  <g stroke="#b8860b" stroke-width="1.2">
+  <g class="sol" stroke="#b8860b" stroke-width="1.2">
     <rect x="552" y="120" width="24" height="24" fill="#b8860b"/><rect x="580" y="120" width="24" height="24" fill="#b8860b"/><rect x="608" y="120" width="24" height="24" fill="none"/><rect x="636" y="120" width="24" height="24" fill="#b8860b"/>
     <rect x="552" y="148" width="24" height="24" fill="none"/><rect x="580" y="148" width="24" height="24" fill="#b8860b"/><rect x="608" y="148" width="24" height="24" fill="#b8860b"/><rect x="636" y="148" width="24" height="24" fill="none"/>
     <rect x="552" y="176" width="24" height="24" fill="#b8860b"/><rect x="580" y="176" width="24" height="24" fill="none"/><rect x="608" y="176" width="24" height="24" fill="#b8860b"/><rect x="636" y="176" width="24" height="24" fill="#b8860b"/>
@@ -53,6 +65,6 @@
   <text x="612" y="279" text-anchor="middle" font-size="10.5" fill="#4a5168">live visualization</text>
 
   <!-- bottom rail -->
-  <line x1="60" y1="322" x2="660" y2="322" stroke="#b8860b" stroke-width="1" stroke-dasharray="4 4"/>
+  <line class="dashflow" x1="60" y1="322" x2="660" y2="322" stroke="#b8860b" stroke-width="1" stroke-dasharray="4 4"/>
   <text x="360" y="348" text-anchor="middle" font-size="11" fill="#4a5168">One GPU-friendly API &#8212; SA / Population-Annealing baselines included</text>
 </svg>

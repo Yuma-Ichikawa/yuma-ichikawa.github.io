@@ -5,6 +5,18 @@
     </marker>
   </defs>
 
+  <style>
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    .dashflow { animation: dashflow 22s linear infinite; }
+    @keyframes dashflow { to { stroke-dashoffset: -180; } }
+    .step { animation: steppulse 5.4s ease-in-out infinite; }
+    .st2 { animation-delay: 1.8s; }
+    .st3 { animation-delay: 3.6s; }
+    @keyframes steppulse { 0%, 55%, 100% { fill: #f6f5f0; } 20% { fill: #f1e8cf; } }
+    .out { animation: outglow 5.4s ease-in-out infinite; }
+    @keyframes outglow { 0%, 100% { opacity: 0.88; } 70% { opacity: 1; } }
+  </style>
+
   <rect width="720" height="400" fill="#fdfdfb"/>
 
   <!-- Input model -->
@@ -15,33 +27,33 @@
   <line x1="164" y1="200" x2="204" y2="200" stroke="#1a2238" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- OneComp container -->
-  <rect x="212" y="56" width="300" height="288" rx="4" fill="none" stroke="#b8860b" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect class="dashflow" x="212" y="56" width="300" height="288" rx="4" fill="none" stroke="#b8860b" stroke-width="1.5" stroke-dasharray="5 4"/>
   <text x="362" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#b8860b" letter-spacing="1">OneComp</text>
   <text x="362" y="104" text-anchor="middle" font-size="10.5" fill="#4a5168" font-family="Consolas, monospace">Runner.auto_run(model_id)</text>
 
   <!-- Step 1 -->
-  <rect x="236" y="122" width="252" height="56" rx="3" fill="#f6f5f0" stroke="#1a2238" stroke-width="1.2"/>
+  <rect class="step" x="236" y="122" width="252" height="56" rx="3" fill="#f6f5f0" stroke="#1a2238" stroke-width="1.2"/>
   <text x="362" y="145" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2238">1. AutoBit</text>
   <text x="362" y="164" text-anchor="middle" font-size="10.5" fill="#4a5168">VRAM detection &#8594; ILP bit-width assignment</text>
 
   <line x1="362" y1="178" x2="362" y2="196" stroke="#1a2238" stroke-width="1.2" marker-end="url(#arrow)"/>
 
   <!-- Step 2 -->
-  <rect x="236" y="198" width="252" height="56" rx="3" fill="#f6f5f0" stroke="#1a2238" stroke-width="1.2"/>
+  <rect class="step st2" x="236" y="198" width="252" height="56" rx="3" fill="#f6f5f0" stroke="#1a2238" stroke-width="1.2"/>
   <text x="362" y="221" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2238">2. Quantize</text>
   <text x="362" y="240" text-anchor="middle" font-size="10.5" fill="#4a5168">QEP &#183; GPTQ &#183; DBF &#183; OneBit</text>
 
   <line x1="362" y1="254" x2="362" y2="272" stroke="#1a2238" stroke-width="1.2" marker-end="url(#arrow)"/>
 
   <!-- Step 3 -->
-  <rect x="236" y="274" width="252" height="56" rx="3" fill="#f6f5f0" stroke="#1a2238" stroke-width="1.2"/>
+  <rect class="step st3" x="236" y="274" width="252" height="56" rx="3" fill="#f6f5f0" stroke="#1a2238" stroke-width="1.2"/>
   <text x="362" y="297" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2238">3. Evaluate &amp; Save</text>
   <text x="362" y="316" text-anchor="middle" font-size="10.5" fill="#4a5168">perplexity &#183; accuracy</text>
 
   <line x1="512" y1="200" x2="552" y2="200" stroke="#1a2238" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- Output -->
-  <rect x="560" y="126" width="136" height="66" rx="4" fill="#1e2c56"/>
+  <rect class="out" x="560" y="126" width="136" height="66" rx="4" fill="#1e2c56"/>
   <text x="628" y="154" text-anchor="middle" font-size="13" font-weight="600" fill="#fdfdfb">1-bit model</text>
   <text x="628" y="174" text-anchor="middle" font-size="10.5" fill="#c9d2ec">~90% accuracy kept</text>
 

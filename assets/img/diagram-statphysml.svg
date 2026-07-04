@@ -5,6 +5,16 @@
     </marker>
   </defs>
 
+  <style>
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    .curve { stroke-dasharray: 160; animation: draw 6s ease-in-out infinite; }
+    @keyframes draw { 0% { stroke-dashoffset: 160; } 45%, 100% { stroke-dashoffset: 0; } }
+    .pt { opacity: 0; animation: pop 6s ease-in-out infinite; }
+    .p1 { animation-delay: 0.5s; } .p2 { animation-delay: 1s; } .p3 { animation-delay: 1.5s; }
+    .p4 { animation-delay: 2s; } .p5 { animation-delay: 2.5s; }
+    @keyframes pop { 0% { opacity: 0; } 12%, 90% { opacity: 1; } 100% { opacity: 0; } }
+  </style>
+
   <rect width="720" height="400" fill="#fdfdfb"/>
 
   <!-- Teacher -->
@@ -50,11 +60,11 @@
   <line x1="292" y1="368" x2="292" y2="326" stroke="#8b8fa0" stroke-width="1"/>
   <line x1="292" y1="368" x2="430" y2="368" stroke="#8b8fa0" stroke-width="1"/>
   <!-- theory curve (solid navy) -->
-  <path d="M 294 334 C 320 340, 350 356, 428 362" fill="none" stroke="#1e2c56" stroke-width="1.8"/>
+  <path class="curve" d="M 294 334 C 320 340, 350 356, 428 362" fill="none" stroke="#1e2c56" stroke-width="1.8"/>
   <!-- simulation points (gold) -->
-  <circle cx="305" cy="337" r="2.6" fill="#b8860b"/>
-  <circle cx="330" cy="344" r="2.6" fill="#b8860b"/>
-  <circle cx="356" cy="352" r="2.6" fill="#b8860b"/>
-  <circle cx="384" cy="357" r="2.6" fill="#b8860b"/>
-  <circle cx="412" cy="360" r="2.6" fill="#b8860b"/>
+  <circle class="pt p1" cx="305" cy="337" r="2.6" fill="#b8860b"/>
+  <circle class="pt p2" cx="330" cy="344" r="2.6" fill="#b8860b"/>
+  <circle class="pt p3" cx="356" cy="352" r="2.6" fill="#b8860b"/>
+  <circle class="pt p4" cx="384" cy="357" r="2.6" fill="#b8860b"/>
+  <circle class="pt p5" cx="412" cy="360" r="2.6" fill="#b8860b"/>
 </svg>
